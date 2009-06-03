@@ -1,0 +1,35 @@
+<!DOCTYPE plugin SYSTEM "../../libs/devblocks/plugin.dtd">
+<plugin>
+	<id>fluidapp</id>
+	<name>FluidApp: Data Provider</name>
+	<description>Provides data needed by Fluid for Growl alerts and dock badges</description>
+	<author>Jeremy Johnstone</author>
+	<revision>1</revision>
+	<link>http://www.jeremyjohnstone.com/</link>
+	<class>
+		<file>plugin.php</file>
+		<name>FluidAppDataPlugin</name>
+	</class>
+ 
+	<extensions>
+		<extension point="cerberusweb.renderer.prebody">
+			<id>fluidapp.prebody</id>
+			<name>Fluid App Pre-body Renderer</name>
+			<class>
+				<file>plugin.php</file>
+				<name>FluidAppDataPreBodyRenderer</name>
+			</class>
+		</extension>						
+                <extension point="devblocks.controller">
+                        <id>fluidapp.apifetch</id>
+                        <name>Fluid App API Fetch</name>
+                        <class>
+                                <file>plugin.php</file>
+                                <name>FluidAppDataAPIFetch</name>
+                        </class>
+                        <params>
+                                <param key="uri" value="fluidapp.jsonp" />
+                        </params>
+                </extension>
+        </extensions> 
+</plugin>
