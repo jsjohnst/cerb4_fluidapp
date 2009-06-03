@@ -10,9 +10,8 @@ class FluidAppDataPlugin extends DevblocksPlugin {
       $tpl->assign('path', $tpl_path);
       $tpl->cache_lifetime = "0";
 
-
       $total_new_count = 0;
-      foreach(DAO_Overview::getGroupTotals() as $data) {
+      foreach(DAO_WorkflowView::getGroupTotals() as $data) {
          $total_new_count += $data["total"];
       }
       $tpl->assign('total_new_count', $total_new_count);

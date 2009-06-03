@@ -1,5 +1,6 @@
 var fluid_cerberus_tickets = {$recent_tickets_json};
 var fluid_cerberus_new_count = {$total_new_count};
+var fluid_cerberus_webpath = "{devblocks_url}{/devblocks_url}";
 
 {literal}
 if (window.fluid) {
@@ -13,7 +14,7 @@ if (window.fluid) {
 			sticky: true,
 			identifier: ticket.t_id,
 			onclick: function() {
-				document.location.href = "/display/" + ticket.t_mask;
+				document.location.href = fluid_cerberus_webpath + "display/" + ticket.t_mask;
 			} 
 		});
 	} 
